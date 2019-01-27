@@ -1,4 +1,4 @@
-package com.noble.activity.firebasemessenger
+package com.noble.activity.firebasemessenger.messages
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import com.google.firebase.auth.FirebaseAuth
+import com.noble.activity.firebasemessenger.R
+import com.noble.activity.firebasemessenger.registerlogin.RegisterActivity
 
 class LatestMessagesActivity : AppCompatActivity() {
 

@@ -1,5 +1,6 @@
-package com.noble.activity.firebasemessenger
+package com.noble.activity.firebasemessenger.models
 
+import com.noble.activity.firebasemessenger.R
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder

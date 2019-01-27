@@ -1,4 +1,4 @@
-package com.noble.activity.firebasemessenger
+package com.noble.activity.firebasemessenger.registerlogin
 
 import android.app.Activity
 import android.content.Intent
@@ -10,6 +10,10 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
+import com.noble.activity.firebasemessenger.messages.LatestMessagesActivity
+import com.noble.activity.firebasemessenger.R
+import com.noble.activity.firebasemessenger.models.User
+import com.noble.activity.firebasemessenger.loadUserPhoto
 import kotlinx.android.synthetic.main.activity_register.*
 import java.util.*
 
@@ -103,7 +107,8 @@ class RegisterActivity : AppCompatActivity() {
         val uid = FirebaseAuth.getInstance().uid ?: ""
         val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
 
-        val user = User(uid, username_input.text.toString(), profileImageUrl)
+        val user =
+            User(uid, username_input.text.toString(), profileImageUrl)
         ref.setValue(user)
             .addOnSuccessListener {
                 Log.d(TAG, "User saved")

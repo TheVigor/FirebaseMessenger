@@ -1,13 +1,16 @@
-package com.noble.activity.firebasemessenger
+package com.noble.activity.firebasemessenger.messages
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.noble.activity.firebasemessenger.R
+import com.noble.activity.firebasemessenger.models.User
+import com.noble.activity.firebasemessenger.models.UserItem
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_new_message.*
@@ -41,6 +44,13 @@ class NewMessageActivity : AppCompatActivity() {
                     if (user != null) {
                         adapter.add(UserItem(user))
                     }
+                }
+
+                adapter.setOnItemClickListener{item, view ->
+                    val intent = Intent(view.context, ChatLogActivity::class.java)
+                    startActivity(intent)
+                    finish()
+
                 }
 
                 recycler_view_new_message.adapter = adapter
