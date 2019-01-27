@@ -8,10 +8,11 @@
         tools:context=".RegisterActivity"
         android:background="@android:color/holo_green_light">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/select_photo_view"
+            app:civ_border_width="4dp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:background="@drawable/rounded_select_photo"
