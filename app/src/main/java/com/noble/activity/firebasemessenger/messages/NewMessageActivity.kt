@@ -19,6 +19,7 @@ class NewMessageActivity : AppCompatActivity() {
 
     companion object {
         private val TAG = "NewMessageActivity"
+        val USER_KEY = "USER_KEY"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +48,11 @@ class NewMessageActivity : AppCompatActivity() {
                 }
 
                 adapter.setOnItemClickListener{item, view ->
+
+                    val userItem = item as UserItem
+
                     val intent = Intent(view.context, ChatLogActivity::class.java)
+                    intent.putExtra(USER_KEY, userItem.user)
                     startActivity(intent)
                     finish()
 

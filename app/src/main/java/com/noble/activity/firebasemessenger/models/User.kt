@@ -1,5 +1,9 @@
 package com.noble.activity.firebasemessenger.models
 
-data class User(val uid: String, val username: String, val profileImageUrl: String) {
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+class User(val uid: String, val username: String, val profileImageUrl: String): Parcelable {
     constructor(): this("", "", "")
 }
